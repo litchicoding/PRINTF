@@ -17,8 +17,12 @@ int	ft_printf_string(char *str)
 	int count;
 
 	count = 0;
+	if (!str)
+		return (0);
 	while (*str)
 	{
+		if (*str == NULL)
+			break ;
 		ft_printf_char((int)*str);
 		++count;
 		++str;

@@ -43,11 +43,11 @@ int	ft_printf(const char *format, ...)
 
 	return_value = 0;
 	va_start(arg, format);
-	// if (format[0] == 0)
-	// {
-	// 	error();
-	// 	return (0);
-	// }
+	if (format[0] == 0)
+	{
+		// error();
+		return (0);
+	}
 	while (*format)
 	{
 		if (*format == '%')
@@ -67,58 +67,60 @@ int	main(void)
 	int	count;
 
 	count = 0;
-	/*Check STRING*/
-	ft_printf("Check pour 's' = \n");
-	ft_printf("[re] : ");
-	count = ft_printf("Manger des %s et de la %s!", "lentilles", "salade");
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Manger des %s et de la %s!", "lentilles", "salade");
-	printf("\n[%d]\n", count);
-	printf("\n");
-	/*Check pour 'd' et 'i'*/
-	ft_printf("Check pour 'd' et 'i' = \n");
-	ft_printf("[re] : ");
-	count = ft_printf("Je suis un %d", 2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Je suis un %d", 2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[re] : ");
-	count = ft_printf("Je suis un %i", -2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Je suis un %i", -2147483647);
-	printf("\n[%d]\n", count);
-	printf("\n");
-	/*Check for unsigned decimal*/
-	ft_printf("Check pour 'u' = \n");
-	ft_printf("[re] : ");
-	count = ft_printf("Je suis un %u", 65535);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Je suis un %u", 65535);
-	printf("\n[%d]\n", count);
-	ft_printf("[re] : ");
-	count = ft_printf("Je suis un %u", -65535);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Je suis un %u", -65535);
-	printf("\n[%d]\n", count);
-	printf("\n");
-	// /*Check unsigned hexa*/
-	ft_printf("Check pour 'X' = \n");
-	ft_printf("[re] : ");
-	count = ft_printf("Le resultat est %X", 2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Le resultat est %X", 2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[re] : ");
-	count = ft_printf("Le resultat est %X", -2147483647);
-	printf("\n[%d]\n", count);
-	ft_printf("[o] : ");
-	count = printf("Le resultat est %X", -2147483647);
-	printf("\n[%d]\n", count);
+	// 	/*Check STRING*/
+	// 	ft_printf("Check pour 's' = \n");
+	// 	ft_printf("[re] : ");
+	// 	count = ft_printf(" NULL %s NULL ", NULL);
+	// 	printf("\n[%d]\n", count);
+	// 	ft_printf("[o] : ");
+	// 	count = printf(" NULL %s NULL ", NULL);
+	// 	printf("\n[%d]\n", count);
+	// 	printf("\n");
+	// /*Check pour 'd' et 'i'*/
+	// ft_printf("Check pour 'd' et 'i' = \n");
+	// ft_printf("[re] : ");
+	// count = ft_printf("Je suis un %d", 2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Je suis un %d", 2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[re] : ");
+	// count = ft_printf("Je suis un %i", -2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Je suis un %i", -2147483647);
+	// printf("\n[%d]\n", count);
+	// printf("\n");
+	// /*Check for unsigned decimal*/
+	// ft_printf("Check pour 'u' = \n");
+	// ft_printf("[re] : ");
+	// count = ft_printf("Je suis un %u", 65535);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Je suis un %u", 65535);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[re] : ");
+	// count = ft_printf("Je suis un %u", -65535);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Je suis un %u", -65535);
+	// printf("\n[%d]\n", count);
+	// printf("\n");
+	// // /*Check unsigned hexa*/
+	// ft_printf("Check pour 'X' = \n");
+	// ft_printf("[re] : ");
+	// count = ft_printf("Le resultat est %X", 2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Le resultat est %X", 2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[re] : ");
+	// count = ft_printf("Le resultat est %X", -2147483647);
+	// printf("\n[%d]\n", count);
+	// ft_printf("[o] : ");
+	// count = printf("Le resultat est %X", -2147483647);
+	// printf("\n[%d]\n", count);
+	ft_printf("%i", ft_printf(" NULL %s NULL ", NULL));
+	printf("%i", printf(" NULL %s NULL", NULL));
 	return (0);
 }
