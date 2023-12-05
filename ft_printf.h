@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_H
-# define FT_PRINT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 int	ft_printf(const char *format, ...);
-int	ft_print_char(int c);
-int	ft_print_string(char *str);
-int	ft_print_digit(int nb, int base);
+int	ft_printf_char(int c);
+int	ft_printf_string(char *str);
+int	ft_printf_digit(int nb, int base);
 
-#endif /*FT_PRINT_F*/
+#endif /*FT_PRINTF_H*/

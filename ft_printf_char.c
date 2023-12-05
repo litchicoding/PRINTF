@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luvallee <luvallee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luvallee <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 19:08:56 by luvallee          #+#    #+#             */
-/*   Updated: 2023/12/04 19:18:51 by luvallee         ###   ########.fr       */
+/*   Created: 2023/12/05 10:54:05 by luvallee          #+#    #+#             */
+/*   Updated: 2023/12/05 10:54:08 by luvallee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_print.h"
+#include "ft_printf.h"
 
-int	ft_print_char(int c)
+int	ft_printf_char(int c)
 {
-	// unsigned char character;
+	unsigned char	character;
 
-	// character = (unsigned char)c;
-	// return (write(1, &character, 1));
+	character = (unsigned char)c;
+	return (write(1, &character, 1));
 }

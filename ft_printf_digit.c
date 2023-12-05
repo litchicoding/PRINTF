@@ -91,14 +91,14 @@ char	*ft_itoa_base(int n, int base)
 	return (ft_final_string(buffer, size));
 }
 
-int	ft_print_digit(int nb, int base)
+int	ft_printf_digit(int nb, int base)
 {
 	int	count;
 	char *new;
 
 	count = 0;
 	new = ft_itoa_base(nb, base);
-	count += ft_print_string(new);
+	count += ft_printf_string(new);
 	free(new);
 	return (count);
 }
