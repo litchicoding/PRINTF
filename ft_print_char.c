@@ -14,8 +14,8 @@
 
 int	ft_print_char(int c)
 {
-	unsigned char character;
+	// unsigned char character;
 
-	character = (unsigned char)c;
-	return (write(1, &character, 1));
+	// character = (unsigned char)c;
+	// return (write(1, &character, 1));
 }
