@@ -12,15 +12,14 @@
 
 #include "ft_printf.h"
 
-int ft_nb_size(long int nb, int base)
+int	ft_nb_size(long long nb, int base)
 {
-	int i = 0;
-	
+	int	i;
+
+	i = 0;
 	i = 0;
 	if (nb == 0)
 		return (1);
-	if (nb < 0 && base == 10)
-		i++;
 	while (nb != 0)
 	{
 		nb /= base;
@@ -32,9 +31,9 @@ int ft_nb_size(long int nb, int base)
 char	*ft_final_string(char *buffer, int size)
 {
 	int		i;
-	int 	j;
+	int		j;
 	char	temp;
-	
+
 	i = 0;
 	j = size - 1;
 	while (i <= j)
@@ -49,55 +48,62 @@ char	*ft_final_string(char *buffer, int size)
 	return (buffer);
 }
 
-char	*ft_convert_itoa(char *buffer, long nb, int base, int original)
+char	*ft_convert_itoa(char *buffer, long long nb, int base, char specifier)
 {
-	int		temp;
-	int		i;
+	int	temp;
+	int	i;
 
 	temp = 0;
 	i = 0;
 	while (nb != 0)
 	{
 		temp = nb % base;
-		if (temp > 9)
-			buffer[i++] = (temp - 10) + 'A';
+		if (temp > 9 && specifier == 'X')
+			buffer[i++] = temp - 10 + 'A';
+		else if (temp > 9 && specifier == 'x')
+			buffer[i++] = temp - 10 + 'a';
 		else
 			buffer[i++] = temp + '0';
 		nb /= base;
 	}
-	if (original < 0 && base == 10)
-		buffer[i++] = '-';
 	return (buffer);
 }
 
-char	*ft_itoa_base(int n, int base)
+char	*ft_itoa_base(unsigned int n, int base, int neg, char specifier)
 {
-	char	*buffer;
-	int		size;
-	long	nb;
-	
-	if (base < 2 || base > 32)
-		return (NULL);
-	nb = n;
-	size = ft_nb_size(nb, base);
+	char		*buffer;
+	int			size;
+	long long	nb;
+
+	nb = (long long)n;
+	if (neg < 0 && specifier == 'd')
+	{
+		size = ft_nb_size(neg, base) + 1;
+		nb = (long long)neg;
+	}
+	else
+		size = ft_nb_size(nb, base);
 	buffer = malloc(sizeof(char) * (size + 1));
 	if (!buffer)
 		return (NULL);
 	if (nb == 0)
 		buffer[0] = '0';
-	if (nb < 0)
+	if (neg < 0 && specifier == 'd')
+	{
+		buffer[size - 1] = '-';
 		nb = -nb;
-	buffer = ft_convert_itoa(buffer, nb, base, n);
+	}
+	buffer = ft_convert_itoa(buffer, nb, base, specifier);
 	return (ft_final_string(buffer, size));
 }
 
-int	ft_printf_digit(int nb, int base)
+int	ft_printf_digit(int nb, int base, char specifier)
 {
-	int	count;
-	char *new;
+	int		count;
+	char	*new;
 
 	count = 0;
-	new = ft_itoa_base(nb, base);
+	new = ft_itoa_base(nb, base, nb, specifier);
 	count += ft_printf_string(new);
 	free(new);
 	return (count);

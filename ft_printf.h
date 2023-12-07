@@ -20,6 +20,6 @@
 int	ft_printf(const char *format, ...);
 int	ft_printf_char(int c);
 int	ft_printf_string(char *str);
-int	ft_printf_digit(int nb, int base);
+int	ft_printf_digit(int nb, int base, char specifier);
 
 #endif /*FT_PRINTF_H*/
