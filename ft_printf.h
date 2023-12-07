@@ -20,6 +20,7 @@
 int	ft_printf(const char *format, ...);
 int	ft_printf_char(int c);
 int	ft_printf_string(char *str);
-int	ft_printf_digit(int nb, int base, char specifier);
+int	ft_printf_digit(long long nb, int base, char specifier);
+int	ft_printf_adress(unsigned long long pointer);
 
 #endif /*FT_PRINTF_H*/

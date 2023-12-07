@@ -8,7 +8,7 @@ INC = ft_printf.h
 AR = ar rcs
 
 SRC = ft_printf.c ft_printf_char.c ft_printf_digit.c \
-		ft_printf_string.c
+		ft_printf_string.c 	ft_printf_adress.c \
 
 OBJ = $(SRC:.c=.o)
 

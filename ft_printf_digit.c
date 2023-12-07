@@ -12,11 +12,10 @@
 
 #include "ft_printf.h"
 
-int	ft_nb_size(long long nb, int base)
+int	ft_nb_size(unsigned long long nb, int base)
 {
 	int	i;
 
-	i = 0;
 	i = 0;
 	if (nb == 0)
 		return (1);
@@ -48,7 +47,8 @@ char	*ft_final_string(char *buffer, int size)
 	return (buffer);
 }
 
-char	*ft_convert_itoa(char *buffer, long long nb, int base, char specifier)
+char	*ft_convert_itoa(char *buffer, unsigned long long nb, int base,
+		char specifier)
 {
 	int	temp;
 	int	i;
@@ -69,17 +69,15 @@ char	*ft_convert_itoa(char *buffer, long long nb, int base, char specifier)
 	return (buffer);
 }
 
-char	*ft_itoa_base(unsigned int n, int base, int neg, char specifier)
+char	*ft_itoa_base(unsigned long long nb, int base, int neg, char specifier)
 {
-	char		*buffer;
-	int			size;
-	long long	nb;
+	char	*buffer;
+	int		size;
 
-	nb = (long long)n;
 	if (neg < 0 && specifier == 'd')
 	{
 		size = ft_nb_size(neg, base) + 1;
-		nb = (long long)neg;
+		nb = neg;
 	}
 	else
 		size = ft_nb_size(nb, base);
@@ -97,7 +95,7 @@ char	*ft_itoa_base(unsigned int n, int base, int neg, char specifier)
 	return (ft_final_string(buffer, size));
 }
 
-int	ft_printf_digit(int nb, int base, char specifier)
+int	ft_printf_digit(long long nb, int base, char specifier)
 {
 	int		count;
 	char	*new;
