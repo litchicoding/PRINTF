@@ -45,8 +45,7 @@ int	ft_printf(const char *format, ...)
 	va_start(arg, format);
 	if (format[0] == 0)
 	{
-		// error();
-		return (0);
+		return (-1);
 	}
 	while (*format)
 	{
@@ -68,23 +67,29 @@ int	ft_printf(const char *format, ...)
 // 	int	count;
 
 // 	count = 0;
-// 	// printf("[remake] :\n");
-// 	// count = ft_printf("%X\n", -1);
-// 	// printf("%d\n", count);
-// 	// printf("[original] :\n");
-// 	// count = printf("%X\n", -1);
-// 	// printf("%d\n", count);
-// 	printf("[remake] :\n");
-// 	count = ft_printf("%d\n", -10);
-// 	printf("%d\n", count);
-// 	printf("[original] :\n");
-// 	count = printf("%d\n", -10);
-// 	printf("%d\n", count);
-// 	printf("[remake] :\n");
-// 	count = ft_printf(" NULL %s NULL \n", (char *)NULL);
-// 	printf("%d\n", count);
-// 	printf("[original] :\n");
-// 	count = printf(" NULL %s NULL \n", (char *)NULL);
-// 	printf("%d\n", count);
+// printf("[remake] :\n");
+// count = ft_printf("%X\n", -1);
+// printf("%d\n", count);
+// printf("[original] :\n");
+// count = printf("%X\n", -1);
+// printf("%d\n", count);
+// printf("[remake] :\n");
+// count = ft_printf("%d\n", -10);
+// printf("%d\n", count);
+// printf("[original] :\n");
+// count = printf("%d\n", -10);
+// printf("%d\n", count);
+// printf("[remake] :\n");
+// count = ft_printf(" NULL %s NULL \n", (char *)NULL);
+// printf("%d\n", count);
+// printf("[original] :\n");
+// count = printf(" NULL %s NULL \n", (char *)NULL);
+// // printf("%d\n", count);
+// printf("[remake] :\n");
+// count = ft_printf("% jghf", "");
+// printf("\n%d\n", count);
+// printf("[original] :\n");
+// count = printf("% jgf", "");
+// printf("\n%d\n", count);
 // 	return (0);
 // }

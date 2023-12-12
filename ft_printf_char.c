@@ -17,5 +17,7 @@ int	ft_printf_char(int c)
 	unsigned char	character;
 
 	character = (unsigned char)c;
-	return (write(1, &c, 1));
+	if (character == '\0')
+		return (write(1, "\0", 1));
+	return (write(1, &character, 1));
 }

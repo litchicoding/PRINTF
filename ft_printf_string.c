@@ -14,7 +14,7 @@
 
 int	ft_printf_string(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (!str)

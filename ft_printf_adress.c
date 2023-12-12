@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_adress.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luvallee <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/12 13:55:38 by luvallee          #+#    #+#             */
+/*   Updated: 2023/12/12 13:55:46 by luvallee         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_pointer_size(unsigned long long nb, int base)
@@ -15,10 +27,9 @@ int	ft_pointer_size(unsigned long long nb, int base)
 	return (i);
 }
 
-
 int	ft_printf_adress(unsigned long long pointer)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (pointer == 0)
