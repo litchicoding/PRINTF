@@ -65,26 +65,26 @@ int	ft_printf(const char *format, ...)
 
 // int	main(void)
 // {
-// 	int				count;
-// 	unsigned long	i;
-// 	unsigned long	*pointer;
-// 	unsigned long	b;
+// 	int	count;
 
-// 	// count = 0;
-// 	// 	// 	// 	// ft_printf("[REMAKE] : ");
-// 	// 	// 	// 	// count = ft_printf(" %X ", 9223372036854775807LL);
-// 	// 	// 	// 	// printf("\ncount : %d\n", count);
-// 	// 	// 	// 	// ft_printf("[ORIGIN] : ");
-// 	// 	// 	// 	// count = printf(" %X ", 9223372036854775807LL);
-// 	// 	// 	// 	// printf("\ncount : %d\n", count);
-// 	i = 0;
-// 	b = 0;
-// 	pointer = &i;
-// 	ft_printf("[REMAKE] : ");
-// 	count = ft_printf(" %p  %p", (void *)i, (void *)b);
-// 	printf("\ncount : %d\n", count);
-// 	ft_printf("[ORIGIN] : ");
-// 	count = printf(" %p  %p", (void *)i, (void *)b);
-// 	printf("\ncount : %d\n", count);
+// 	count = 0;
+// 	// printf("[remake] :\n");
+// 	// count = ft_printf("%X\n", -1);
+// 	// printf("%d\n", count);
+// 	// printf("[original] :\n");
+// 	// count = printf("%X\n", -1);
+// 	// printf("%d\n", count);
+// 	printf("[remake] :\n");
+// 	count = ft_printf("%d\n", -10);
+// 	printf("%d\n", count);
+// 	printf("[original] :\n");
+// 	count = printf("%d\n", -10);
+// 	printf("%d\n", count);
+// 	printf("[remake] :\n");
+// 	count = ft_printf(" NULL %s NULL \n", (char *)NULL);
+// 	printf("%d\n", count);
+// 	printf("[original] :\n");
+// 	count = printf(" NULL %s NULL \n", (char *)NULL);
+// 	printf("%d\n", count);
 // 	return (0);
 // }

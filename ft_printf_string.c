@@ -18,7 +18,7 @@ int	ft_printf_string(char *str)
 
 	count = 0;
 	if (!str)
-		return (0);
+		return (write(1, "(null)", 6));
 	while (*str)
 	{
 		ft_printf_char((int)*str);
